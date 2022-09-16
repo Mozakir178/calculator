@@ -1,0 +1,81 @@
+body {
+    background-color: rgb(22, 178, 212);
+}
+
+h1 {
+    margin: auto;
+    width: 500px;
+    text-align: center;
+    font-size: 60px;
+    color: teal;
+    background-color: white;
+}
+/* use grid to acheive the layout */
+
+#calculator {
+    height: 500px;
+    width: 400px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    margin: auto;
+    border-radius: 10px;
+    margin-top: 50px;
+    padding: 40px;
+    background-color: white;
+}
+
+#input {
+    overflow: scroll;
+    width: 90%;
+    height: 80px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin: auto;
+    color: green;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+#keyboard {
+    margin-top: 50px;
+    width: 80%;
+    display: grid;
+    margin: auto;
+    margin-top: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 70px);
+    gap: 10px;
+}
+
+#keyboard>div {
+    font-weight: bolder;
+    font-size: 25px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+#keyboard>div:hover {
+    background-color: rgb(29, 150, 190);
+    color: white;
+    cursor: pointer;
+}
+
+.black {
+    background-color: black;
+    color: white
+}
+
+.red {
+    background-color: red;
+    color: white;
+    grid-area: 5/3/6/5;
+}
+
+.green {
+    background-color: green;
+    color: white;
+    grid-area: 5/1/6/3;
+}
