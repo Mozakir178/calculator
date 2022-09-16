@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masai Calculator</title>
+    <style>
+        body {
+            background-color: rgb(22, 178, 212);
+        }
+        
+        h1 {
+            margin: auto;
+            width: 500px;
+            text-align: center;
+            font-size: 60px;
+            color: teal;
+            background-color: white;
+        }
+        /* use grid to acheive the layout */
+        
+        #calculator {
+            height: 500px;
+            width: 400px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            margin: auto;
+            border-radius: 10px;
+            margin-top: 50px;
+            padding: 40px;
+            background-color: white;
+        }
+        
+        #input {
+            overflow: scroll;
+            width: 90%;
+            height: 80px;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            margin: auto;
+            color: green;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+        
+        #keyboard {
+            margin-top: 50px;
+            width: 80%;
+            display: grid;
+            margin: auto;
+            margin-top: 30px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 70px);
+            gap: 10px;
+        }
+        
+        #keyboard>div {
+            font-weight: bolder;
+            font-size: 25px;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+        
+        #keyboard>div:hover {
+            background-color: rgb(29, 150, 190);
+            color: white;
+            cursor: pointer;
+        }
+        
+        .black {
+            background-color: black;
+            color: white
+        }
+        
+        .red {
+            background-color: red;
+            color: white;
+            grid-area: 5/3/6/5;
+        }
+        
+        .green {
+            background-color: green;
+            color: white;
+            grid-area: 5/1/6/3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Masai Calculator</h1>
+    <div id="calculator">
+        <div id="input"></div>
+        <div id="keyboard">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div class="black">+</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div class="black">-</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div class="black">*</div>
+            <div>.</div>
+            <div>0</div>
+            <div class="black">=</div>
+            <div class="black">/</div>
+            <div class="red">C</div>
+            <div class="green">Back</div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var num = document.querySelectorAll("#keyboard>div");
+    var dis = document.querySelector("#input");
+
+    // console.log(dis); 
+    for (i = 0; i < num.length; i++) {
+        num[i].addEventListener("click", cal);
+
+    }
+
+
+    function cal() {
+        var tar = event.target.innerText;
+        var a = dis.innerText;
+        var b = a.slice(0, -1);
+
+
+        switch (tar) {
+
+            case "C":
+                dis.innerText = "";
+                break;
+
+            case "=":
+                if (a[0] == "/" || a[0] == "*") {
+                    dis.innerText = "Please check the input";
+                } else if (dis.innerText != "") {
+                    dis.innerText = eval(dis.innerText);
+                }
+                break;
+            case "Back":
+                dis.innerText = b;
+
+
+                break;
+            default:
+                dis.innerText += tar;
+        }
+
+    }
+</script>
