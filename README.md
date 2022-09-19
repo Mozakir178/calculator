@@ -1,4 +1,4 @@
-# calculator
+# calculator Web Application
 
 Type: Indiviual Project
 
@@ -13,3 +13,4 @@ I have made this calcutator using the HTML, CSS, and JavaScript. It was an idviu
 [Checkout](https://glittery-gnome-5d67a6.netlify.app/)
 
 ### View
+![](https://github.com/Mozakir178/calculator/blob/main/calculator/calculater.jpg)
